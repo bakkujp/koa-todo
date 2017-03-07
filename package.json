@@ -1,0 +1,26 @@
+{
+  "name": "koa-todo",
+  "version": "1.0.0",
+  "description": "The todo sample using koajs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bakkujp/koa-todo.git"
+  },
+  "keywords": [
+    "koa"
+  ],
+  "author": "Bach Phan Trong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bakkujp/koa-todo/issues"
+  },
+  "homepage": "https://github.com/bakkujp/koa-todo#readme",
+  "dependencies": {
+    "koa": "^2.0.1",
+    "koa-route": "^3.2.0"
+  }
+}
