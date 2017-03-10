@@ -4,19 +4,35 @@ import route from 'koa-route'
 
 var app = new Koa();
 
-// route middleware
-app.use(route.get('/', async (ctx, next)  => {
+const list = async (ctx, next) => {
   console.log("list todo");
-  ctx.body = 'Hello Koa'
-  await next();
-}));
+  ctx.body = 'List todos';
+  ctx.status = 201;
+};
 
-// app.use(route.get('/todo/new', add));
-// app.use(route.get('/todo/:id', show));
+var add = async (ctx)  => {
+  console.log("add a todo");
+  ctx.body = 'Add a todo';
+  await next();
+};
+
+var show = async (ctx, next)  => {
+  console.log("show a todo");
+  ctx.body = 'Show a todo';
+  await next();
+};
+
+var del = async (ctx, next)  => {
+  console.log("delete a todo");
+  ctx.body = 'Delete a todo';
+  await next();
+};
+
+// route middleware
+app.use(route.get('/', list));
+app.use(route.get('/todo/new', add));
+app.use(route.get('/todo/:id', show));
+app.use(route.del('/todo/:id', del))
 // app.use(route.get('/todo/delete/:id', remove));
-// app.use(route.get('/todo/edit/:id', edit));
-// app.use(route.post('/todo/create', create));
-// app.use(route.post('/todo/update', update));
 
 app.listen(3000);
-
